@@ -1,0 +1,333 @@
+/* COMMON */
+html {
+	position: relative;
+	min-height: 100%;
+	margin: 0;
+}
+body {
+  position: relative;
+  min-height: 100%;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+}
+a {
+  text-decoration: none;
+}
+/*HEADER*/
+header {
+  font-family: 'Nanum Pen Script', cursive;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  border-bottom: 1px solid #c8c8c8;
+}
+header .logo {
+  position: absolute;
+  width: 320px;
+  height: 51px;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  margin: auto;
+}
+header .inner {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  /* height: 120px; */
+}
+header .inner .main-menu {
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 10;
+}
+header .inner .main-menu ul.menu {
+  display: flex;
+}
+header .inner .main-menu .menu li a {
+  padding: 40px 35px;
+  display: block;
+  font-size: 25px;
+  color: #553830;
+}
+header .inner .main-menu .menu li a:hover {
+  color: crimson;
+}
+header .inner .main-menu .menu li.userName {
+	margin-top: 40px;
+	font-size: 18px;
+}
+
+/*VISUAL*/
+.visual {
+  position: relative;
+  margin-top: 100px;
+  /* background-repeat: no-repeat;
+  filter: blur(5px); */
+  /* position: absolute; */
+  
+}
+.visual .inner {
+  position: relative;
+  background-size: cover;
+  /* display: block;
+  margin: auto; */
+  /* margin-top: 145px;
+  margin-bottom: 145px; */
+  
+}
+.visual .inner .filter {
+  filter: blur(10px);
+}
+.visual .title {
+  position: absolute;
+  /* display: block;
+  margin: auto; */
+  /* display: flex;
+  justify-content: center; */
+
+  /* display: block;
+  margin: auto; */
+  
+  /* text-align: center; */
+
+  /* top: 40px;
+  left: 400px;
+  right: 350px; */
+
+  /* top: 40px;
+  margin-left: auto;
+  margin-right: auto; */
+
+  /* margin: 40px auto;
+  text-align: center; */
+
+  top: 40px;
+  left: 400px;
+  right: 350px;
+  
+}
+.visual .inner .title img {
+  
+}
+
+/*BOARD*/
+.board {
+    position: relative;
+    height: 50px;
+    margin-top: 170px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+    text-align: center;
+}
+.board .inner {
+    position: absolute;
+}
+.board .inner h1 {
+	display: flex;
+	align-items: left;
+	margin-bottom: 20px;
+}
+.board .inner p {
+	font-family: 'Nanum Pen Script', cursive;
+}
+.board .inner .board-list {
+    border: 1px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.board .inner .board-list tr {
+    background-color: #ff52a0;
+}
+.board .inner .board-list tr td {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 20px;
+	color: #fff;
+}
+.board .inner .board-list tr th.num {
+    width: 70px;
+}
+.board .inner .board-list tr th.writer {
+    width: 100px;
+}
+.board .inner .board-list tr th.title {
+    width: 600px;
+}
+.board .inner .board-list tr th.dates {
+    width: 80px;
+}
+.board .inner .board-list tr th.hits {
+    width: 60px
+}
+.board .inner ul {
+
+	
+	margin-top: 20px;
+}
+
+
+/*SIGNIN*/
+.signin {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  margin-top: 100px;
+  /* background-image: url("../images/main.png"); */
+  /* filter: blur(10px); */
+  
+}
+.signin .signin_bg {
+  width: 100%;
+  height: 1080px;
+  background-image: url("../images/main.png");
+  filter: blur(20px);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.signin h1 {
+  /*font-family: 'Nanum Pen Script', cursive;*/
+  font-family: 'Nanum Gothic', sans-serif;
+  /*padding: 10px;*/
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+}
+.signin .signin__card {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: #f6f5f0;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
+  color: #555;
+}
+.signin .signin__card form {
+  padding: 30px 22px;
+}
+.signin .signin__card form input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.signin .signin__card .login_btn {
+  margin-left: 25%;
+  width: 100px;
+  height: 50px;
+  margin-right: 20px;
+  font-size: 15px;
+}
+.signin .signin__card .signup_btn {
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+}
+
+/*SIGNUP*/
+.signup {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  margin-top: 100px;
+  
+}
+.signup .signup_bg {
+  width: 100%;
+  height: 1080px;
+  background-image: url("../images/main.png");
+  filter: blur(20px);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.signup h1 {
+  /*font-family: 'Nanum Pen Script', cursive;*/
+  font-family: 'Nanum Gothic', sans-serif;
+  /*padding: 10px;*/
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+}
+.signup .signup__card {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: #f6f5f0;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, .3);
+  color: #555;
+}
+.signup .signup__card form {
+  padding: 30px 22px;
+}
+.signup .signup__card form input {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.signup .signup__card .signup_btn {
+  width: 100px;
+  height: 50px;
+  font-size: 15px;
+}
+
+/*FOOTER*/
+footer {
+	left: 0;
+	bottom: 0;
+	margin-left: 40%;
+	width: 100%;
+	padding: 15px 0;
+	text-align: center;
+}
+footer .inner {
+	position: absolute;
+}
+footer .btn-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+footer .btn-group .btn {
+  font-size: 20px;
+  margin-right: 30px;
+}
+footer .copyright {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
