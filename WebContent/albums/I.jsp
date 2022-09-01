@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String user_name = (String)session.getAttribute("user_name");
+	String user_id = (String)session.getAttribute("user_id");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,6 +13,7 @@
   <link rel="icon" href="/WebProject-1/favicons.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="/WebProject-1/static/css/main.css">
+  <link rel="stylesheet" href="/WebProject-1/static/css/album.css">
 
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
@@ -44,23 +50,52 @@
 	        <li> 
 	          <a href="/WebProject-1/board/Blist.taeyeon">board</a>
 	        </li>
+	        <% if(user_id == null) { %>
+	        <li>
+	          <a href="/WebProject-1/user/signin.jsp">login</a>
+	        </li>
+	        <% } else { %>
+	        <li class="userName">
+	        	<%= user_name %>님 <button type="button" onclick="location.href='/WebProject-1/user/logout.jsp'">로그아웃</button>
+	        </li>
+	        <% } %>
 	      </ul>
 	    </div>
 	  </div> 
 	</header>
-
-  <!--SIGN IN-->
-  <section class="signin">
-    <div class="signin_bg"></div>
-    <!-- <img src="../images/main.png" alt="" class="signin_bg"> -->
-    <h1>로그인</h1>
-    <div class="signin__card">
-      <form action="/WebProject-1/user/check_login.jsp" name="sign-in" method="post" id="signInForm">
-        <input type="text" placeholder="ID" name="userId">
-        <input type="password" placeholder="PW" name="userPw"><br />
-        <button type="submit" class="login_btn">Login</button>
-        <button type="submit" class="signup_btn" name="signup-btn">Signup</button>
-      </form>
+  
+  <!--INVU-->
+  <section class="I">
+    <div class="inner">
+      <div class="subBox"> 
+        <h3>ALBUM</h3>
+      </div>
+      <div class="albumDetail"> 
+        <div class="album">
+          <div class="left">
+            <img src="/WebProject-1/static/images/I.png" width="500px" height="500px">
+          </div>
+          <div class="right">
+            <div class="title">
+              <div class="title-text">
+                <p class="title-name">The 1st Mini Album 'I'</p>
+                <p class="title-genre">2015/10/07 | 미니앨범 | 발라드</p>
+              </div>
+              <div class="text-box">
+                <div class="main-text">
+                  만능 보컬리스트 태연의 색다른 변신!<br>
+                  첫 솔로 앨범 ‘I’ 10월 7일 전격 공개!<br>
+                  - 태연의 다채로운 매력을 만날 수 있는 총 6트랙 수록! 국내외 히트메이커 참여!<br><br>
+                </div>
+                <div class="sub-text">
+                  소녀시대 태연이 10월 7일 첫 솔로 앨범을 발표한다.<br><br>
+                  오는 10월 7일 첫 미니앨범 ‘I’를 공개하고 소녀시대 멤버로는 처음 솔로 활동에 나서는 태연은 소녀시대 및 유닛 소녀시대-태티서 활동을 비롯해 다양한 OST, 뮤지션과의 콜라보레이션 등으로 매력적인 보이스와 탁월한 가창력을 인정 받고 있는 만큼, 첫 솔로 앨범을 통해 보여줄 색다른 모습이 기대를 모으고 있다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String user_name = (String)session.getAttribute("user_name");
+	String user_id = (String)session.getAttribute("user_id");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,6 +13,7 @@
   <link rel="icon" href="/WebProject-1/favicons.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="/WebProject-1/static/css/main.css">
+  <link rel="stylesheet" href="/WebProject-1/static/css/album.css">
 
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
@@ -44,23 +50,51 @@
 	        <li> 
 	          <a href="/WebProject-1/board/Blist.taeyeon">board</a>
 	        </li>
+	        <% if(user_id == null) { %>
+	        <li>
+	          <a href="/WebProject-1/user/signin.jsp">login</a>
+	        </li>
+	        <% } else { %>
+	        <li class="userName">
+	        	<%= user_name %>님 <button type="button" onclick="location.href='/WebProject-1/user/logout.jsp'">로그아웃</button>
+	        </li>
+	        <% } %>
 	      </ul>
 	    </div>
 	  </div> 
 	</header>
-
-  <!--SIGN IN-->
-  <section class="signin">
-    <div class="signin_bg"></div>
-    <!-- <img src="../images/main.png" alt="" class="signin_bg"> -->
-    <h1>로그인</h1>
-    <div class="signin__card">
-      <form action="/WebProject-1/user/check_login.jsp" name="sign-in" method="post" id="signInForm">
-        <input type="text" placeholder="ID" name="userId">
-        <input type="password" placeholder="PW" name="userPw"><br />
-        <button type="submit" class="login_btn">Login</button>
-        <button type="submit" class="signup_btn" name="signup-btn">Signup</button>
-      </form>
+  
+  <!--INVU-->
+  <section class="Something">
+    <div class="inner">
+      <div class="subBox"> 
+        <h3>ALBUM</h3>
+      </div>
+      <div class="albumDetail"> 
+        <div class="album">
+          <div class="left">
+            <img src="/WebProject-1/static/images/Something New.png" width="500px" height="500px">
+          </div>
+          <div class="right">
+            <div class="title">
+              <div class="title-text">
+                <p class="title-name">The 3rd Mini Album ‘Something New’</p>
+                <p class="title-genre">2018/06/18 | 미니앨범 | R&B</p>
+              </div>
+              <div class="text-box">
+                <div class="main-text">
+                  ‘믿고 듣는 보컬 퀸’ 태연의 스페셜 여름 선물!<br>
+                  태연 세 번째 미니앨범 ‘Something New’ 6월 18일 공개!<br><br>
+                </div>
+                <div class="sub-text">
+                  ‘믿고 듣는 보컬 퀸’ 태연(SM엔터테인먼트 소속)이 세 번째 미니앨범 ‘Something New’로 색다른 음악적 변신을 선보인다.<br><br>
+                  태연의 세 번째 미니 앨범 ‘Something New’는 6월 18일 각종 음악 사이트를 통해 공개되며, 타이틀 곡 ‘Something New’를 비롯한 다채로운 장르의 총 6트랙으로 구성, ‘독보적 보컬리스트’ 태연의 한층 넓어진 음악 스펙트럼을 만끽할 수 있다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

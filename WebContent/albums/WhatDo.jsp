@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String user_name = (String)session.getAttribute("user_name");
+	String user_id = (String)session.getAttribute("user_id");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,6 +13,7 @@
   <link rel="icon" href="/WebProject-1/favicons.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="/WebProject-1/static/css/main.css">
+  <link rel="stylesheet" href="/WebProject-1/static/css/album.css">
 
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
@@ -44,23 +50,51 @@
 	        <li> 
 	          <a href="/WebProject-1/board/Blist.taeyeon">board</a>
 	        </li>
+	        <% if(user_id == null) { %>
+	        <li>
+	          <a href="/WebProject-1/user/signin.jsp">login</a>
+	        </li>
+	        <% } else { %>
+	        <li class="userName">
+	        	<%= user_name %>님 <button type="button" onclick="location.href='/WebProject-1/user/logout.jsp'">로그아웃</button>
+	        </li>
+	        <% } %>
 	      </ul>
 	    </div>
 	  </div> 
 	</header>
-
-  <!--SIGN IN-->
-  <section class="signin">
-    <div class="signin_bg"></div>
-    <!-- <img src="../images/main.png" alt="" class="signin_bg"> -->
-    <h1>로그인</h1>
-    <div class="signin__card">
-      <form action="/WebProject-1/user/check_login.jsp" name="sign-in" method="post" id="signInForm">
-        <input type="text" placeholder="ID" name="userId">
-        <input type="password" placeholder="PW" name="userPw"><br />
-        <button type="submit" class="login_btn">Login</button>
-        <button type="submit" class="signup_btn" name="signup-btn">Signup</button>
-      </form>
+  
+  <!--INVU-->
+  <section class="WhatDo">
+    <div class="inner">
+      <div class="subBox"> 
+        <h3>ALBUM</h3>
+      </div>
+      <div class="albumDetail"> 
+        <div class="album">
+          <div class="left">
+            <img src="/WebProject-1/static/images/What Do I Call You.png" width="500px" height="500px">
+          </div>
+          <div class="right">
+            <div class="title">
+              <div class="title-text">
+                <p class="title-name">The 4th Mini Album ‘What Do I Call You’</p>
+                <p class="title-genre">2020/12/15 | 미니앨범 | R&B</p>
+              </div>
+              <div class="text-box">
+                <div class="main-text">
+                  ‘믿듣탱’ 태연, 네 번째 미니앨범 ‘What Do I Call You’ 12월 15일 발매!<br>
+                  다채로운 장르의 총 6곡 수록!<br><br>
+                </div>
+                <div class="sub-text">
+                  소녀시대 태연(에스엠엔터테인먼트 소속)이 12월 15일 네 번째 미니앨범 ‘What Do I Call You’를 발매한다.<br><br>
+                  이번 앨범은 타이틀 곡 ‘What Do I Call You’를 포함한 다채로운 장르의 총 6곡으로 구성되어 있으며, 히트메이커 켄지를 비롯해 팝스타 Selena Gomez, Machine Gun Kelly를 프로듀싱한 작곡가 David Pramik, 미국 유명 프로듀서Mike Daley, 프로듀싱팀 Devine Channel, 인기 작사가 조윤경, 이스란 등이 작업해 완성도를 높였음은 물론, 태연도 수록곡 ‘To the moon’의 작사, 작곡에 참여해 눈길을 끈다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

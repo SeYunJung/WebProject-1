@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String user_name = (String)session.getAttribute("user_name");
+	String user_id = (String)session.getAttribute("user_id");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,6 +13,7 @@
   <link rel="icon" href="/WebProject-1/favicons.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="/WebProject-1/static/css/main.css">
+  <link rel="stylesheet" href="/WebProject-1/static/css/album.css">
 
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
@@ -44,23 +50,51 @@
 	        <li> 
 	          <a href="/WebProject-1/board/Blist.taeyeon">board</a>
 	        </li>
+	        <% if(user_id == null) { %>
+	        <li>
+	          <a href="/WebProject-1/user/signin.jsp">login</a>
+	        </li>
+	        <% } else { %>
+	        <li class="userName">
+	        	<%= user_name %>님 <button type="button" onclick="location.href='/WebProject-1/user/logout.jsp'">로그아웃</button>
+	        </li>
+	        <% } %>
 	      </ul>
 	    </div>
 	  </div> 
 	</header>
-
-  <!--SIGN IN-->
-  <section class="signin">
-    <div class="signin_bg"></div>
-    <!-- <img src="../images/main.png" alt="" class="signin_bg"> -->
-    <h1>로그인</h1>
-    <div class="signin__card">
-      <form action="/WebProject-1/user/check_login.jsp" name="sign-in" method="post" id="signInForm">
-        <input type="text" placeholder="ID" name="userId">
-        <input type="password" placeholder="PW" name="userPw"><br />
-        <button type="submit" class="login_btn">Login</button>
-        <button type="submit" class="signup_btn" name="signup-btn">Signup</button>
-      </form>
+  
+  <!--Purpose-->
+  <section class="Purpose">
+    <div class="inner">
+      <div class="subBox">
+        <h3>ALBUM</h3>
+      </div>
+      <div class="albumDetail">
+        <div class="album">
+          <div class="left">
+            <img src="/WebProject-1/static/images/Purpose.png" width="500px" height="500px">
+          </div>
+          <div class="right">
+            <div class="title">
+              <div class="title-text">
+                <p class="title-name">The 2nd Album 'Purpose'</p>
+                <p class="title-genre">2020/01/15 | 정규앨범 | 발라드</p>
+              </div>
+              <div class="text-box">
+                <div class="main-text">
+                  “’믿듣탱’의 컴백” 태연, 정규 2집 리패키지 ‘Purpose’ 1월 15일 공개<br>
+                  신곡 3곡 포함한 총 15개 곡 수록!<br><br>
+                </div>
+                <div class="sub-text">
+                  ‘믿고 듣는 보컬퀸’ 소녀시대 태연(에스엠엔터테인먼트 소속)이 정규 2집 리패키지 앨범 ‘Purpose’로 돌아온다.<br><br>
+                  태연의 정규 2집 리패키지 ‘Purpose’는 1월 15일 발매되며, 신곡 3곡을 포함한 총 15개 트랙이 수록된 한층 풍성한 구성으로 음악팬들을 사로잡을 전망이다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

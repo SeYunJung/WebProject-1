@@ -41,16 +41,13 @@
             <a href="/WebProject-1">home</a>
           </li>
           <li>
-            <a href="">notice</a>
+            <a href="/WebProject-1/menu/profile.jsp">profile</a>
           </li>
           <li>
-            <a href="">profile</a>
+            <a href="/WebProject-1/menu/discography.jsp">discography</a>
           </li>
           <li>
-            <a href="">discography</a>
-          </li>
-          <li>
-            <a href="">music</a>
+            <a href="/WebProject-1/menu/music.jsp">music</a>
           </li>
           <li>
             <a href="/WebProject-1/board/board.jsp">board</a>

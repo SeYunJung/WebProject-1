@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String user_name = (String)session.getAttribute("user_name");
+	String user_id = (String)session.getAttribute("user_id");
+%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,6 +13,7 @@
   <link rel="icon" href="/WebProject-1/favicons.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="/WebProject-1/static/css/main.css">
+  <link rel="stylesheet" href="/WebProject-1/static/css/album.css">
 
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
@@ -44,23 +50,51 @@
 	        <li> 
 	          <a href="/WebProject-1/board/Blist.taeyeon">board</a>
 	        </li>
+	        <% if(user_id == null) { %>
+	        <li>
+	          <a href="/WebProject-1/user/signin.jsp">login</a>
+	        </li>
+	        <% } else { %>
+	        <li class="userName">
+	        	<%= user_name %>님 <button type="button" onclick="location.href='/WebProject-1/user/logout.jsp'">로그아웃</button>
+	        </li>
+	        <% } %>
 	      </ul>
 	    </div>
 	  </div> 
 	</header>
-
-  <!--SIGN IN-->
-  <section class="signin">
-    <div class="signin_bg"></div>
-    <!-- <img src="../images/main.png" alt="" class="signin_bg"> -->
-    <h1>로그인</h1>
-    <div class="signin__card">
-      <form action="/WebProject-1/user/check_login.jsp" name="sign-in" method="post" id="signInForm">
-        <input type="text" placeholder="ID" name="userId">
-        <input type="password" placeholder="PW" name="userPw"><br />
-        <button type="submit" class="login_btn">Login</button>
-        <button type="submit" class="signup_btn" name="signup-btn">Signup</button>
-      </form>
+  
+  <!--INVU-->
+  <section class="INVU">
+    <div class="inner">
+      <div class="subBox">
+        <h3>ALBUM</h3>
+      </div>
+      <div class="albumDetail"> 
+        <div class="album">
+          <div class="left">
+            <img src="/WebProject-1/static/images/INVU.png" width="500px" height="500px">
+          </div>
+          <div class="right">
+            <div class="title">
+              <div class="title-text">
+                <p class="title-name">The 3rd Album 'INVU'</p>
+                <p class="title-genre">2022/02/14 | 정규앨범 | POP</p>
+              </div>
+              <div class="text-box">
+                <div class="main-text">
+                  ‘믿고 듣는 보컬퀸’ 태연, 정규 3집 ‘INVU’ 2월 14일 발매!<br>
+                  태연이 들려주는 다양한 사랑 이야기! 한층 성숙해진 음악 세계 예고!<br><br>
+                </div>
+                <div class="sub-text">
+                  ‘믿고 듣는 보컬퀸’ 태연(에스엠엔터테인먼트 소속)이 2월 14일 정규 3집 ‘INVU’를 발매한다.<br><br>
+                  이번 앨범은 동명의 타이틀 곡 ‘INVU’를 비롯해, 인간의 가장 본능적이고 복잡한 감정인 ‘사랑’에 대해 다각적으로 표현한 총 13곡이 수록되어 있어, 한층 성숙해진 태연의 음악 세계를 만나기에 충분하다.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

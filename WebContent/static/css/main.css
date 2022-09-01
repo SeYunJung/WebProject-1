@@ -1,11 +1,8 @@
 /* COMMON */
 html {
-	position: relative;
 	min-height: 100%;
-	margin: 0;
 }
 body {
-  position: relative;
   min-height: 100%;
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 16px;
@@ -18,12 +15,12 @@ a {
 /*HEADER*/
 header {
   font-family: 'Nanum Pen Script', cursive;
-  background-color: #fff;
-  position: fixed;
+  /*font-family: 'Anek Telugu', sans-serif;*/
+  position: relative;
   top: 0;
   z-index: 9;
   width: 100%;
-  border-bottom: 1px solid #c8c8c8;
+  /*border-bottom: 1px solid #c8c8c8;*/
 }
 header .logo {
   position: absolute;
@@ -39,11 +36,9 @@ header .inner {
   height: 100px;
   margin: 0 auto;
   position: relative;
-  /* height: 120px; */
 }
 header .inner .main-menu {
   position: absolute;
-  display: flex;
   right: 0;
   top: 10;
 }
@@ -67,11 +62,11 @@ header .inner .main-menu .menu li.userName {
 /*VISUAL*/
 .visual {
   position: relative;
-  margin-top: 100px;
   /* background-repeat: no-repeat;
   filter: blur(5px); */
   /* position: absolute; */
-  
+  overflow: hidden;
+  background-attachment: fixed;
 }
 .visual .inner {
   position: relative;
@@ -173,13 +168,122 @@ header .inner .main-menu .menu li.userName {
 	margin-top: 20px;
 }
 
+/* YOUTUBE */
+.youtube {
+    position: relative;
+}
+.youtube .inner {
+	text-align: center;
+    /*display: flex;
+    justify-content: center;*/
+}
+
+/* PROFILE */
+.profile {
+	position: relative;
+	
+}
+.profile .inner {
+	margin-top: 2%;
+	margin-left: 20%; 
+}
+.profile .inner .subBox {
+	margin-bottom: 10px;
+}
+.profile .inner .subBox h3 {
+	font-family: 'Anek Telugu', sans-serif;
+	font-size: 50px;   
+}
+.profile .artist {
+	display: flex;
+}
+.profile .artist .right {
+	margin-top: 20px;
+	margin-left: 50px;
+}
+.profile .artist .right .title-text {
+	font-size: 35px;  
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000
+}
+.profile .artist .right .text-box {
+	margin-top: 50px; 
+}
+.profile .artist .right .text-box .birth {
+	display: flex;
+}
+.profile .artist .right .text-box .birth h3 {
+	margin-right: 20px;
+}
+.profile .artist .right .text-box .debut {
+	display: flex;
+	margin-top: 30px;
+}
+.profile .artist .right .text-box .debut h3 {
+	margin-right: 20px;
+}
+
+/* DISCOGRAPHY */
+.discography {
+    position: relative;
+}
+.discography .inner {
+    /*text-align: center;*/
+}
+.discography .inner .Albums {
+	/*margin-top: 20px;*/
+  	
+  	
+}
+.discography .inner .Albums .Album {
+	display: flex;
+  	justify-content: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.first-album {
+	margin-right: 20px;
+}
+.second-album {
+	margin-right: 20px;
+}
+.discography .inner .Albums .EP {
+	display: flex;
+  	justify-content: center;
+	display: relative;
+	margin-bottom: 20px;
+} 
+.first-mini {
+	margin-right: 20px;
+}
+.second-mini {
+	margin-right: 20px;
+}
+.third-mini {
+	margin-right: 20px;
+}
+.discography .inner .Albums .Single {
+	display: flex;
+  	justify-content: center;
+	display: relative;
+}
+.single-rain {
+	margin-right: 20px;
+}
+.single-eleven {
+	margin-right: 20px;
+}
+.single-fourseason {
+	margin-right: 20px;
+}
+
+
 
 /*SIGNIN*/
 .signin {
   position: relative;
   width: 100%;
   height: 1080px;
-  margin-top: 100px;
   /* background-image: url("../images/main.png"); */
   /* filter: blur(10px); */
   
@@ -187,7 +291,7 @@ header .inner .main-menu .menu li.userName {
 .signin .signin_bg {
   width: 100%;
   height: 1080px;
-  background-image: url("../images/main.png");
+  /*background-image: url("../images/main.png");*/
   filter: blur(20px);
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -201,7 +305,7 @@ header .inner .main-menu .menu li.userName {
   position: absolute;
   top: 25%;
   left: 50%;
-  color: #fff;
+  color: black;
   font-size: 50px;
   font-weight: 700;
   text-align: center;

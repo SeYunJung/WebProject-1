@@ -24,48 +24,73 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header>
-    <a href="/WebProject-1">
-      <img src="/WebProject-1/static/images/logo.png" alt="" class="logo">
-    </a>
-    <div class="inner">
-      <div class="main-menu">
-        <ul class="menu">
-          <li>
-            <a href="/WebProject-1">home</a>
-          </li>
-          <li>
-            <a href="/WebProject-1/menu/profile.jsp">profile</a>
-          </li>
-          <li>
-            <a href="/WebProject-1/menu/discography.jsp">discography</a>
-          </li>
-          <li>
-            <a href="/WebProject-1/menu/music.jsp">music</a>
-          </li>
-          <li> 
-            <a href="/WebProject-1/board/Blist.taeyeon">board</a>
-          </li>
-          <% if(user_id == null) { %>
-          <li>
-            <a href="/WebProject-1/user/signin.jsp">login</a>
-          </li>
-          <% } else { %>
-          <li class="userName">
-          	<%= user_name %>님 <button type="button" onclick="location.href='/WebProject-1/user/logout.jsp'">로그아웃</button>
-          </li>
-          <% } %>
-        </ul>
-      </div>
-    </div> 
-  </header>
+	<header>
+	  <a href="/WebProject-1/index.html">
+	    <img src="/WebProject-1/static/images/logo.png" alt="Taeyeon" class="logo">
+	  </a>
+	  <div class="inner">
+	    <a href="/">
+	    </a>
+	    <div class="main-menu">
+	      <ul class="menu">
+	        <li>
+	          <a href="/WebProject-1">home</a>
+	        </li>
+	        <li>
+	          <a href="/WebProject-1/menu/profile.jsp">profile</a>
+	        </li>
+	        <li>
+	          <a href="/WebProject-1/menu/discography.jsp">discography</a>
+	        </li>
+	        <li>
+	          <a href="/WebProject-1/menu/music.jsp">music</a>
+	        </li>
+	        <li> 
+	          <a href="/WebProject-1/board/Blist.taeyeon">board</a>
+	        </li>
+	        <% if(user_id == null) { %>
+	        <li>
+	          <a href="/WebProject-1/user/signin.jsp">login</a>
+	        </li>
+	        <% } else { %>
+	        <li class="userName">
+	        	<%= user_name %>님 <button type="button" onclick="location.href='/WebProject-1/user/logout.jsp'">로그아웃</button>
+	        </li>
+	        <% } %>
+	      </ul>
+	    </div>
+	  </div> 
+	</header>
   
-  <!--VISUAL-->
-  <section class="visual">
+  <!--PROFILE-->
+<section class="profile">
     <div class="inner">
-      <img src="/WebProject-1/static/images/main.png" class="filter" width="100%" height="1080px">
-      <div class="title">
-        <img src="/WebProject-1/main.png" alt="">
+      <div class="subBox">
+        <h3>MUSICIAN</h3>
+      </div>
+      <div class="artistDetail">
+        <div class="artist">
+          <div class="left">
+            <img src="/WebProject-1/static/images/profile.png" width="500px" height="500px">
+          </div>
+          <div class="right">
+            <div class="title">
+              <div class="title-text">
+                <h4>태연</h4>
+              </div>
+              <div class="text-box">
+                <div class="birth">
+                  <h3>생일</h3>
+                  <p>3월 9일</p>
+                </div>
+                <div class="debut">
+                  <h3>데뷔</h3>
+                  <p>2007년 8월 5일 소녀시대 '다시 만난 세계'</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
